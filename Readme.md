@@ -1,6 +1,6 @@
 ## Westec 
 
-En este repositorio se encontrará el código para el nuevo Westec  desarrollado por el Departamento de Web y Multimedia.
+En este repositorio se encontrará el código para el nuevo Westec Services admin desarrollado por Santiago Alvarez y Pablo Lizana
 
 ## Configuracion de FLASK
 
@@ -34,19 +34,3 @@ Sobre la carpeta /fe
 
 Ya se debería tener el vue JS configurado y ejecutando (normalmente por el puerto 8080 => http://localhost:8080).
 
-### Autores
-
-- **[Juan Antonio Zamora Arosemena](https://github.com/juanzeta33)**
-- **[Jonathan Lam Sarlat](https://github.com/jjls07)**
-
-## Licencia
-
-Proyecto generado por el Departamento de Tecnologia Web y Multimedios dela Direccion General de Tecnologias de Informacion y Comunicacion de la Universidad Tecnológica de Panamá
-
-### Problemas comunes
-- No se puede ejecutar python en powershell.
-- <img width="655" alt="Captura de pantalla 2023-08-02 a la(s) 1 45 52 p  m" src="https://github.com/Departamento-Web-y-Multimedia-UTP/CarnetUTP/assets/36899684/ccc10703-4a6a-4883-8463-3a4c04c16cb5">
-- set-executionpolicy remotesigned
-
-  Si no puedes activar el Enviorement del Python debes ejecutar lo siguiente en el Powershell, Después de usar esos dos comandos solo debes utilizar en la terminal de visual code lo siguiente:
-    ./actívate
