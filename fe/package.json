@@ -1,0 +1,49 @@
+{
+  "name": "westecpanamav1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-countdown": "^2.1.1",
+    "@intlify/unplugin-vue-i18n": "^2.0.0",
+    "@mdi/font": "^7.2.96",
+    "@paypal/paypal-js": "^8.0.2",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.3.1",
+    "js-cookie": "^3.0.1",
+    "json-to-csv-export": "^2.1.1",
+    "pinia": "^2.1.6",
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "sweetalert2": "^11.6.13",
+    "vue": "^3.2.47",
+    "vue-barcode-reader": "^1.0.3",
+    "vue-body-class": "^3.0.2",
+    "vue-i18n": "^9.9.0",
+    "vue-json-csv": "^1.2.10",
+    "vue-router": "^4.2.4",
+    "vue-the-mask": "^0.11.1",
+    "vue3-popper": "^1.5.0",
+    "vue3-qr-reader": "^1.0.0",
+    "vuetify": "^3.5.1"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.46.0",
+    "eslint-plugin-vue": "^9.16.1",
+    "prettier": "^3.0.1",
+    "vite": "^4.4.9"
+  }
+}

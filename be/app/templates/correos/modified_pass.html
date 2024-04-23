@@ -1,0 +1,8 @@
+{% extends "layout_correos.html" %}
+{% block titulo %} Solicitud de Modificación de Contraseña {% endblock %}
+{% block contenido %}
+{{domain}}
+<p>Recibimos una solicitud de modificación de contraseña. Si usted fue quien la realizó, ignore este correo.</p>
+<p>Si no es el caso, favor reestablezca su contraseña lo más pronto posible por medio del <a href="{{domain}}reset_request"></a>.</p>
+
+{% endblock %}

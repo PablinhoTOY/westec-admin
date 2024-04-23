@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        .logo {
+            height: 100px;
+            padding: 10px;
+        }
+
+        p {
+            word-break: break-word;
+        }
+
+        .tituloNic {
+            font-size: 2.3rem;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+        }
+
+        .tableHeight {
+            height: 110px;
+        }
+
+        @media only screen and (max-width:600px) {
+            .container {
+                width: 100%;
+            }
+
+            .logo {
+                height: 70px;
+                padding: 10px;
+            }
+
+            .tituloNic {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+            .tableHeight {
+                height: 80px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="email" class="container">
+        <!-- Header -->
+        <!-- Logo -->
+        <table role="presentation" border="0" cellspacing="0" width="100%" class="tableHeight">
+            <tr>
+                <td align="center" style="color: white;">
+                    <img alt="Logo Westec " class="logo"
+                        src="https://lh3.googleusercontent.com/proxy/5X0IK-RQb9QK7Gux9x_iuH0MpQhADCOI0GqIvzuA54XaeKedWdXM4E26DZG1lEG1xs6QiIW3DBrSbMTTOaWlKCyz3qbVVEg">
+                </td>
+                <td bgcolor="#00458d" align="center"
+                    style="color: white; padding-top: 15px; padding-bottom: 10px; width: 60%;">
+                    <h1 class="tituloNic">Westec  Panamá</h1>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Body -->
+        <table role="presentation" border="0" cellspacing="0">
+            <tr>
+                <td style="vertical-align: top; padding: 10px;">
+                    <div>
+                        <p style="margin:0 0 12px 0;font-size:1.1rem;line-height:24px;font-family:sans-serif">
+                            {% block contenido %}{% endblock %} </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Footer -->
+        <table role="presentation" border="0" cellspacing="0" width="100%">
+            <tr>
+                <td bgcolor="#00458d" align="center" style="padding: 30px 30px;">
+                    <a href="utp.ac.pa"
+                        style="text-decoration: none; font-weight: bold; color: #FFFFFF;  font-family:sans-serif;">
+                        Copyright © {{ now.year }} Westec  Panamá</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>

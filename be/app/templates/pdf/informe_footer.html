@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="css/reporte.css">
+        <script>
+            function subst() {
+                var vars = {};
+                var x = document.location.search.substring(1).split('&');
+                for (var i in x) {
+                    var z = x[i].split('=', 2);
+                    vars[z[0]] = unescape(z[1]);
+                }
+                var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
+                console.log('pagina', vars['page']);
+                for (var i in x) {
+                    var y = document.getElementsByClassName(x[i]);
+                    for (var j = 0; j < y.length; ++j) y[j].textContent = vars[x[i]];
+
+                    if (vars['page'] == 1) { // If page is 1, set FakeHeaders display to none
+                        //document.getElementById("footer").style.display = 'none';
+                    }
+
+                    if (vars['page'] == 3) { // If page is 3, set FakeHeaders display to none
+                        //document.getElementById("footer").style.display = 'none';
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body style="border:0;margin:0;" onload="subst()">
+        <footer>
+            <br>
+            <div class="row row-footer">
+                <div id="footer" class="col">
+                    <div class="titulos-footer">
+                        <p class="title-footer text-center">“Camino a la excelencia a través del mejoramiento continuo”</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>

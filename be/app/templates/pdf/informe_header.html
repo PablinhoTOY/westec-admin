@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reporte.css">
+    <script>
+        function subst() {
+            var vars = {};
+            var x = document.location.search.substring(1).split('&');
+            for (var i in x) { var z = x[i].split('=', 2); vars[z[0]] = unescape(z[1]); }
+            var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
+            console.log('pagina', vars['page']);
+            for (var i in x) {
+                var y = document.getElementsByClassName(x[i]);
+                for (var j = 0; j < y.length; ++j) y[j].textContent = vars[x[i]];
+                if (vars['page'] == 1) { // If page is 1, set FakeHeaders display to none
+
+                    document.getElementById("header-text").style.display = 'none';
+                }
+                if (vars['page'] > 1) { // If page is 1, set FakeHeaders display to none
+                    document.getElementById("header").style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body style="border:0;margin:0;" onload="subst()">
+    <div id="header-text" class="row row-header">
+        <div class="col text-left">
+            <p class="text-muted muted">Informe de Uso de Tiquetes</p>
+        </div>
+        <div class="col text-right">
+            <p class="text-muted muted">Fecha del reporte:</p>
+        </div>
+    </div>
+    <header>
+        <div id="header" class="row row-header" style="margin: 0 auto;" >
+            {% include "logos/utp.html" %}
+            <div id="central" class="col">
+                <div class="titulos-cotizacion">
+                    <p class="title-cot text-center stronger">UNIVERSIDAD TECNOLÓGICA DE PANAMÁ</p>
+                    <p class="title-cot text-center stronger">DIRECCION ADMINISTRATIVA</p>
+                    <p class="title-cot text-center stronger">DEPARTAMENTO DE CAFETERÍA</p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </header>
+</body>
+</html>

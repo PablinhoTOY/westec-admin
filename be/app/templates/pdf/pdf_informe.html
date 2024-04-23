@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de Tiquetes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css', _external=True)}}">
+</head>
+
+<body>
+    <div class="headerLeft">
+        <img src="{{ url_for('static', filename='images/logo_utp.png')}}" />
+    </div>
+    <div class="headerCenter">
+        <p class="title-cot text-center stronger">UNIVERSIDAD TECNOLÓGICA DE PANAMÁ</p>
+        <p class="title-cot text-center stronger">DIRECCIÓN ADMINISTRATIVA</p>
+        <p class="title-cot text-center stronger">DEPARTAMENTO DE CAFETERÍA</p>
+    </div>
+    <div class="footerCenter">
+        <p class="title-footer text-center">“Camino a la excelencia a través del mejoramiento continuo”</p>
+    </div>
+   
+    <div class="headerLeft2">
+    <p class="text-muted muted">Fecha: <strong>{{fecha}} </strong></p></p>
+    </div>
+    <div class="headerRight2">
+
+    </div>
+
+    <table id="tabla-solicitudes" class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">Boleto</th>
+                <th class="text-center" scope="col">Nombre</th>
+                <th class="text-center" scope="col">Cédula</th>
+                <th class="text-center" scope="col">Carrera</th>
+                <th class="text-center" scope="col">Facultad</th>
+                <th class="text-center" scope="col">Fecha</th>
+                <th class="text-center" scope="col">Cafetería</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in resultado %}
+            <tr>
+                <td class="text-center">{{data.codigo}}</td>
+                <td class="text-center">{{data.nombre}}</td>
+                <td class="text-center">{{data.cedula}}</td>
+                <td class="text-center">{{data.carrera}}</td>
+                <td class="text-center">{{data.facultad}}</td>
+                <td class="text-center">{{data.fecha_utilizacion}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
