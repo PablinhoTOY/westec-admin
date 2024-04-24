@@ -4,7 +4,7 @@
     <div class="d-flex flex-column align-center justify-content-center">
 
       <v-card class="p-5" elevation="8" width="80vw" rounded="lg" border>
-        <v-btn id="" variant="flat" size="72" rounded="circle" :to="Tr.i18nRoute({ name: 'Login' })"><v-icon
+        <v-btn id="" variant="flat" size="72" rounded="circle" to=""><v-icon
             color="#5c5c5c" size="56">mdi-arrow-left-bold</v-icon></v-btn>
         <div class="mb-8 d-flex align-center justify-content-center">
           <h2 class="nic2" style="text-shadow: 0 0">Registro Westec </h2>
@@ -62,7 +62,7 @@
             </div>
             <div class="my-2 col-6">
               <v-autocomplete class="custom-label-asterisco" v-model="credencialPaisWatcher" :loading="loadingPais"
-                :items="paises" :item-title="$i18n.locale == 'es' ? 'nombre' : 'nombre_en'" return-object
+                :items="paises" item-title="nombre" return-object
                 :error-messages="v$.credenciales.pais.$errors.map(e => e.$message)" variant="outlined" rounded="lg"
                 label="Pais" prepend-inner-icon="mdi-flag-variant">
               </v-autocomplete>
@@ -169,14 +169,13 @@ import * as infoUsuarioService from '../../services/userinfo.js'
 import * as paisesService from "../../services/paises"
 import useValidate from '@vuelidate/core'
 import { required, helpers, minLength, sameAs, email, numeric } from '@vuelidate/validators'
-import Tr from "@/i18n/translation"
 import { mask } from 'vue-the-mask'
 
 
 export default {
   setup() {
     const userStore = useUserStore();
-    return { userStore, Tr };
+    return { userStore };
   },
   directives: {
     // Define una directiva personalizada para la máscara de entrada
@@ -408,7 +407,7 @@ export default {
                 };
 
               // Redirige al usuario a la página de inicio de sesión
-              this.$router.push(Tr.i18nRoute({ name: 'Login' }))
+              this.$router.push("/")
             }
           })
           .catch((err) => console.log(err));

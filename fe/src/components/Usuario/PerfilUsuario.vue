@@ -376,7 +376,6 @@ import { useUserStore } from '../../stores/user'
 import * as dominiosService from '../../services/dominios.js'
 import * as infoUsuarioService from '../../services/userinfo.js'
 import * as paisesService from "../../services/paises"
-import Tr from "@/i18n/translation"
 import * as mensajes from '../../helpers/mensajes'
 import useValidate from '@vuelidate/core'
 import { required, helpers, minLength, sameAs, email, numeric } from '@vuelidate/validators'
@@ -386,7 +385,7 @@ import { setTransitionHooks } from 'vue'
 export default {
     setup() {
         const userStore = useUserStore()
-        return { Tr, userStore }
+        return { userStore }
     },
     directives: {
         // Define una directiva personalizada para la máscara de entrada

@@ -14,14 +14,14 @@
             </div>
           </div>
           <div v-show="localVariables.showAnim" class="d-flex flex-column align-center my-1 bold text-center">
-            <h3>{{ $t("home.head") }}</h3>
-            <p>{{ $t('home.head_subtext') }}</p>
+            <h3></h3>
+            <p></p>
           </div>
 
 
           <form class="form-inline mt-12" onsubmit="return false;">
             <div class="w-100 d-flex flex-row flex-sm-row">
-              <v-text-field :label="$t('home.label_search_domain')" class="v-input-dominio-principal rounded-lg"
+              <v-text-field label="" class="v-input-dominio-principal rounded-lg"
                 variant="outlined" type="text" maxlength="63" counter :loading="domain.loadingDominio" required
                 v-model="domain.buscarDominio.dominio"
                 @input="domain.buscarDominio.dominio = domain.buscarDominio.dominio.toLowerCase()"
@@ -33,7 +33,7 @@
                       :items="domain.domainTypes.tipos" v-model="domain.buscarDominio.sufijo"></v-select>
                     <v-btn class="v-btn-dominio rounded-0 rounded-te-lg rounded-be-lg" :color="colorWestec" size="x-large"
                       type="submit" @click="validarBuscarDominio(domain.buscarDominio.dominio)">
-                      {{ $t('home.search_domain') }}
+                      
                     </v-btn>
                   </div>
                 </template>
@@ -43,26 +43,7 @@
               :title="domain.dominioNoValido.titulo" border="start" closable :text="domain.dominioNoValido.info"
               density="compact"></v-alert>
           </form>
-
-
-          <div class="d-flex flex-row justify-content-center align-center mt-6 w-100">
-            <v-card class="row d-flex flex-row justify-content-center align-center w-75" color="transparent"
-              variant="flat" height="">
-              <div v-for="(tipo, index) in domain.domainTypes.response"
-                class="d-flex flex-row col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 justify-content-center my-2"
-                :key="index">
-                <span style="cursor: default; align-self: center;" class="mr-2">|</span><v-card
-                  v-if="index == domain.domainTypes.response.length - 1"
-                  @click="domain.buscarDominio.sufijo = tipo.nombre" class="p-2 " variant="flat"
-                  style="cursor: pointer;" color="transparent">{{
-      tipo.nombre }}</v-card>
-
-                <v-card v-else class="p-2" variant="flat" @click="domain.buscarDominio.sufijo = tipo.nombre"
-                  style="cursor: pointer;" color="transparent">{{ tipo.nombre }}</v-card>
-                <span style="cursor: default; align-self: center;" class="ml-2">|</span>
-              </div>
-            </v-card>
-          </div>
+          
         </div>
 
       </div>
@@ -183,8 +164,8 @@
 
         <v-card class="my-14" min-height="60vh" variant="flat" color="transparent">
           <div class="d-flex flex-column justify-content-center align-center text-center">
-            <h2>{{ $t("home.head_noticias") }}</h2>
-            <p>{{ $t('home.head_noticias_subtext') }}</p>
+            <h2></h2>
+            <p></p>
             <hr :style="`border: 2px solid ${colorWestec}; width: 25%; opacity: 100%; border-radius: 5px;`">
           </div>
 
@@ -198,7 +179,7 @@
                   <v-col v-for="(card, index) in 5" :key="index" cols="12" md="4">
                     <v-card height="300px" class="nonSelectable d-flex flex-column 
               justify-content-center align-center" hover link
-                      @click="$router.push(Tr.i18nRoute({ name: 'PantallaNoticia', params: { id: index + 1 }, }))">
+                      @click="">
                       <h2 style="font-size: 18px;" class="text-center">What is Lorem Ipsum?</h2>
                       <p class="px-4 text-center">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
@@ -305,18 +286,15 @@
 <script>
 
 import * as dominiosService from '../../services/dominios.js'
-import { useI18n } from 'vue-i18n'
 import * as msg from '../../helpers/mensajes'
-import Tr from "@/i18n/translation"
 import { useCarritoStore } from '../../stores/carrito'
 import { watchEffect } from 'vue';
 
 // import { useUserStore } from '../../stores/user';
 export default {
   setup() {
-    const { t } = useI18n()
     const carritoStore = useCarritoStore();
-    return { t, Tr, carritoStore }
+    return { carritoStore }
   },
   data() {
     return {
@@ -350,18 +328,18 @@ export default {
       info: {
         static_cards: [{
           icon: 'mdi-search-web',
-          title: this.$t('home.card1.title'),
-          body: this.$t('home.card1.body'),
+          title: '',
+          body: '',
         },
         {
           icon: 'mdi-lead-pencil',
-          title: this.$t('home.card2.title'),
-          body: this.$t('home.card2.body'),
+          title: '',
+          body: '',
         },
         {
           icon: 'mdi-format-paint',
-          title: this.$t('home.card3.title'),
-          body: this.$t('home.card3.body'),
+          title: '',
+          body: '',
         },
         ],
       },

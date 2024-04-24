@@ -53,14 +53,13 @@
 
 import { useUserStore } from '../../stores/user'
 import * as dominiosService from '../../services/dominios.js'
-import Tr from "@/i18n/translation"
 import * as msg from '../../helpers/mensajes'
 import Swal from 'sweetalert2'
 
 export default {
     setup() {
         const userStore = useUserStore()
-        return { Tr, userStore }
+        return { userStore }
     },
     data() {
         return {

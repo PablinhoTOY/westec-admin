@@ -1,13 +1,13 @@
 :root {
-    --Westec -color: #00458d;
-    --Westec -rojo: #d12229;
-    --Westec -verde: #709e07;
-    --Westec -celeste: #0f9bd0;
-    --Westec -naranja: #ef5705;
-    --Westec -turquesa: #007b91;
-    --Westec -fushia: #d3c0d3;
-    --Westec -secondary: #51034f;
-    --Westec -azul: #c3d9ff;
+    --Westec-color: #00458d;
+    --Westec-rojo: #d12229;
+    --Westec-verde: #709e07;
+    --Westec-celeste: #0f9bd0;
+    --Westec-naranja: #ef5705;
+    --Westec-turquesa: #007b91;
+    --Westec-fushia: #d3c0d3;
+    --Westec-secondary: #51034f;
+    --Westec-azul: #c3d9ff;
     --dark: #16161a;
     --dark-foreground: #72757e;
     --dark-text: #94a1b2;
@@ -70,7 +70,7 @@ html {
 }
 
 .indicator {
-    border-bottom: 2px solid var(--Westec -color);
+    border-bottom: 2px solid var(--Westec-color);
 
 }
 
@@ -135,7 +135,7 @@ span[class*="image-Menestra"],
     display: flex;
     align-items: center;
     flex-direction: column !important;
-    color: var(--Westec -color);
+    color: var(--Westec-color);
 }
 
 span[class*="text-opc-"] {
@@ -205,7 +205,7 @@ span[class*="text-opc-Ensalada"] {
 #sidebar-menu li a.router-link-active,
 #sidebar-menu li a:hover {
     color: #fff;
-    background: var(--Westec -color);
+    background: var(--Westec-color);
 }
 
 #sidebar-menu .sidebar-heading {
@@ -213,11 +213,11 @@ span[class*="text-opc-Ensalada"] {
     font-weight: bold;
     font-size: 1em;
     padding: 0.2rem 0.5rem;
-    color: var(--Westec -color);
+    color: var(--Westec-color);
 }
 
 .utp-colord {
-    color: var(--Westec -color) !important;
+    color: var(--Westec-color) !important;
 }
 
 .card-menu {
@@ -258,7 +258,7 @@ span[class*="text-opc-Ensalada"] {
 }
 
 .borrar-menu:hover {
-    color: var(--Westec -color)
+    color: var(--Westec-color)
 }
 
 .titles-menus {
@@ -390,10 +390,10 @@ main {
 }
 
 .hero-gradient {
-    background-image: linear-gradient(0deg, #ffffff, rgba(0, 69, 141, 0) 100%),
+    /* background-image: linear-gradient(0deg, #ffffff, rgba(0, 69, 141, 0) 100%),
                     radial-gradient(circle at 0 0, #00458d 0, rgba(0, 69, 141, 0) 40%), 
                     linear-gradient(180deg, #00458d -20%, rgba(0, 69, 141, 0) 0%), 
-                    radial-gradient(circle at 100% 0, #00458d 0, rgba(0, 69, 141, 0) 40%)
+                    radial-gradient(circle at 100% 0, #00458d 0, rgba(0, 69, 141, 0) 40%) */
 }
 
 .navbar-toggler-icon2 {
@@ -518,7 +518,7 @@ table.dataTable tbody tr {
 
 .nic2 {
     margin: 0;
-    color: var(--Westec -color);
+    color: var(--Westec-color);
     font-size: 4vw;
     font-weight: 700;
     text-shadow: 2px 2px 1px rgb(0, 0, 0);
@@ -529,7 +529,7 @@ table.dataTable tbody tr {
     font-weight: 700;
 
     div {
-        color: var(--Westec -color);
+        color: var(--Westec-color);
     }
 }
 
@@ -545,7 +545,7 @@ table.dataTable tbody tr {
 }
 
 .scroll-to-top:hover {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
 }
 
 
@@ -806,7 +806,7 @@ body {
 }
 
 .bg {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     color: white;
     font-size: 13px;
 }
@@ -871,7 +871,7 @@ footer.sticky-footer {
 }
 
 .card-title {
-    color: var(--Westec -color);
+    color: var(--Westec-color);
 }
 
 .lb-acciones {
@@ -890,13 +890,13 @@ footer.sticky-footer {
 }
 
 .nav-pages .pagination .active {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     color: white;
-    border-color: var(--Westec -color);
+    border-color: var(--Westec-color);
 }
 
 .nav-pages .pagination .page-link:hover {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     color: white;
     text-decoration: none;
 }
@@ -1040,7 +1040,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
 }
 
 #btnADD,
@@ -1211,7 +1211,7 @@ div.dataTables_wrapper div.dataTables_length select {
 
 .typewriter {
     overflow: hidden;
-    border-right: .15em solid var(--Westec -color);
+    border-right: .15em solid var(--Westec-color);
     /* The typwriter cursor */
     white-space: nowrap;
     margin: 0 auto;
@@ -1239,7 +1239,7 @@ div.dataTables_wrapper div.dataTables_length select {
     }
 
     50% {
-        border-color: var(--Westec -color);
+        border-color: var(--Westec-color);
     }
 }
 
@@ -1272,7 +1272,7 @@ div.dataTables_wrapper div.dataTables_length select {
 .dropdown-item:focus,
 .dropdown-item:hover,
 .dropdown-item:active {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     color: #fff;
 }
 
@@ -1283,7 +1283,7 @@ div.dataTables_wrapper div.dataTables_length select {
 #logo-der .navbar-nav .dropdown .dropdown-menu a:hover {
     margin-bottom: 0;
     color: white !important;
-    background: var(--Westec -color);
+    background: var(--Westec-color);
 }
 
 #logo-der li {
@@ -1443,14 +1443,14 @@ select {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     padding: 1.2rem 0;
     color: white;
     font-size: 0.8rem;
 }
 
 .page-footer {
-    background: var(--Westec -color);
+    background: var(--Westec-color);
     color: white;
     font-size: 0.8rem;
 }
@@ -1914,7 +1914,7 @@ a:hover {
 }
 
 .v-divider {
-    border-color: var(--Westec -color) !important;
+    border-color: var(--Westec-color) !important;
     opacity: 0.8 !important;
     border-radius: 10px;
 }

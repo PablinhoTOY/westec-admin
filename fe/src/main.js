@@ -5,7 +5,6 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import { router } from './router'
-import i18n from "./i18n"
 import '@mdi/font/css/materialdesignicons.css'
 
 import piniaPluginPersistedState from "pinia-plugin-persistedstate"
@@ -20,7 +19,6 @@ app.config.globalProperties.colorWestec = '#00458d'
 pinias.use(piniaPluginPersistedState)
 app.use(pinias)
 app.use(router)
-app.use(i18n)
 app.use(vuetify)
 app.use(bootstrap)
 

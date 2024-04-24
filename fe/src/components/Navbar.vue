@@ -1,10 +1,10 @@
 <template>
   <div class="" style=" z-index: 10;">
     <v-tabs class="sticky-tabs" height="60" :color='colorWestec' grow>
-      <v-tab :to="Tr.i18nRoute({ name: 'Inicio' })">Registrar dominio</v-tab>
-      <v-tab :to="Tr.i18nRoute({ name: 'TablaPrecios' })">Tabla de precios</v-tab>
-      <v-tab :to="Tr.i18nRoute({ name: 'PreguntasFrecuentes' })">Preguntas frecuentes</v-tab>
-      <v-tab :to="Tr.i18nRoute({ name: 'Noticias' })">Noticias</v-tab>
+      <v-tab to="">Registrar dominio</v-tab>
+      <v-tab to="">Tabla de precios</v-tab>
+      <v-tab to="">Preguntas frecuentes</v-tab>
+      <v-tab to="">Noticias</v-tab>
     </v-tabs>
     <div style="height: 60px;"></div>
 
@@ -72,10 +72,10 @@
             <v-divider v-if="userStore.isAuth" class="mt-0 my-2 mx-1"
               :class="mostrarEnDrawer && userStore.isAuth ? '' : 'mt-3'" thickness="2px"></v-divider>
             <v-list-item v-if="userStore.isAuth" :style="`color: ${colorWestec};`"
-              @click="$router.push(Tr.i18nRoute({ name: 'PerfilUsuario' }))" prepend-icon="mdi-account-details-outline"
+              @click="" prepend-icon="mdi-account-details-outline"
               title="Perfil" value="perfilusuario"></v-list-item>
             <v-list-item v-if="userStore.isAuth" :style="`color: ${colorWestec};`"
-              @click="$router.push(Tr.i18nRoute({ name: 'DominiosUsuario' }))" prepend-icon="mdi-web-box"
+              @click="" prepend-icon="mdi-web-box"
               title="Mis dominios" value="misdominios"></v-list-item>
 
           </v-list>
@@ -84,7 +84,8 @@
 
           <template #append>
             <v-list density="compact" nav border="top" class="">
-              <v-list-item v-if="mostrarEnDrawer" class="tituloNavbar my-0 pb-0 ml-3 bold">
+
+              <!-- <v-list-item v-if="mostrarEnDrawer" class="tituloNavbar my-0 pb-0 ml-3 bold">
                 <v-card width="200px" variant="flat">
                   Lenguaje
                   <v-icon size="20px">mdi-translate</v-icon></v-card>
@@ -93,21 +94,21 @@
               <v-select id="LanguageSwitcher" class="languageswitcher mt-2" v-model="selectedLocale" variant="outlined"
                 :items="infoLocales" item-title="text" item-value="value" density="compact"
                 :menu-icon="mostrarEnDrawer ? 'mdi-arrow-down-drop-circle-outline' : ''">
-                <!-- <option v-for="sLocale in infoLocales" :key="`locale-${sLocale.value}`" :value="sLocale.value"
+                <option v-for="sLocale in infoLocales" :key="`locale-${sLocale.value}`" :value="sLocale.value"
               :selected="locale === sLocale.value">
               <span v-if="sLocale == 'es'" style="background-image:url(../static/img/es.png);">🇪🇸&emsp;</span>
               <span v-else>🇺🇸&emsp;</span>
               <span>{{ t(`locale.${sLocale}`) }}</span>
-              </option> -->
+              </option> 
                 <template v-if="!mostrarEnDrawer" #prepend-inner>
                   <v-icon style="margin-left: -4px;">mdi-translate</v-icon>
                 </template>
-              </v-select>
+              </v-select> -->
 
               <div class="my-2 mt-4">
                 <v-btn v-if="!userStore.isAuth" class="d-flex align-center justify-content-start mb-1" block
                   id="loginId" :color="colorWestec" variant="flat" height="40px"
-                  :to="Tr.i18nRoute({ name: 'Login' })">login
+                  to="/login">login
                   <template #prepend>
                     <v-icon style="margin-right: 25px; margin-left: -2px;">mdi-login</v-icon>
                   </template>
@@ -380,8 +381,6 @@
 <script>
 import { useUserStore } from '../stores/user'
 import { useCarritoStore } from '../stores/carrito'
-import Tr from "@/i18n/translation"
-import { useI18n } from 'vue-i18n'
 import * as msg from '../helpers/mensajes'
 import Swal from 'sweetalert2'
 
@@ -402,9 +401,7 @@ export default {
   setup() {
     const userStore = useUserStore()
     const carritoStore = useCarritoStore()
-    const { t, locale } = useI18n()
-    const supportedLocales = Tr.supportedLocales
-    return { t, locale, userStore, Tr, carritoStore, supportedLocales }
+    return { userStore, carritoStore }
   },
   methods: {
     logout() {
@@ -413,7 +410,7 @@ export default {
     },
     irComprar() {
       //document.getElementById('listaCarrito').ariaExpanded = false;
-      this.$router.push(Tr.i18nRoute({ name: 'CompraDominio' }));
+      this.$router.push({ name: 'Comprar' });
       this.isShowCarrito = false;
       this.drawerCarrito = false;
     },
@@ -451,22 +448,13 @@ export default {
     },
     inicializaciones() {
 
-      for (let localazo of this.supportedLocales) {
-        this.infoLocales.push(
-          { text: this.t(`locale.${localazo}`), value: localazo, image: `../static/img/${localazo}.png` },
-        )
-      }
+     
     },
   },
 
   mounted() {
     this.inicializaciones();
     //watcher para visualizar la variable selectedLocale, cuando cambia, cambia el idioma
-    this.selectedLocale = this.locale
-    this.$watch('selectedLocale', (newValue, oldValue) => {
-      this.switchLanguage(newValue)
-      // Perform actions when the value of propertyName changes
-    });
   },
   beforeUnmount() {
 

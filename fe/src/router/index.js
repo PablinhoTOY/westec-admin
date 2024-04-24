@@ -27,129 +27,105 @@ import Perfil from '../components/Administracion/AdministrarPass.vue'
 import TerminosCondiciones from '../views/TerminosCondiciones.vue'
 import NotFound from '../components/NotFound.vue'
 import NotAccess from '../components/NotAccess.vue'
-import MsAuth from '../components/MSAuth.vue'
 import HistorialPagos from '../components/Ingresos/HistorialPagos.vue'
 import HistorialDominio from '../components/Reporte/HistorialDominio.vue'
-import {
-
-  useUserStore
-} from '../stores/user';
-import Tr from "@/i18n/translation"
+import { useUserStore } from '../stores/user';
 
 
 const all_routes = [
-  {
-    path: '/ms/auth',
-    name: 'Inicio de Sesión',
-    component: MsAuth,
-  },
-  {
-    path: "/:locale?",
-    component: RouterView,
-    beforeEnter: Tr.routeMiddleware,
-    children: [
-      {
-        path: '',
-        name: 'Inicio',
-        component: PaginaPrincipal
-      },
-      {
-        path: 'precios',
-        name: 'TablaPrecios',
-        component: TablaPrecios
-      },
-      {
-        path: 'FAQ',
-        name: 'PreguntasFrecuentes',
-        component: PreguntasFrecuentes
-      },
-      {
-        path: 'noticias',
-        name: 'Noticias',
-        component: Noticias
-      },
-      {
-        path: 'carrito',
-        name: 'CompraDominio',
-        component: CompraDominio,
-      },
-      {
-        path: 'noticia/:id',
-        name: 'PantallaNoticia',
-        component: PantallaNoticia,
-      },
-      {
-        path: "login",
-        name: 'Login',
-        component: Login,
-      },
-      {
-        path: "login/Registro",
-        name: 'Registro',
-        component: Registro,
-      },
 
-      {
-        path: "recoverpassword/request",
-        name: 'SendResetPassword',
-        component: SendResetPassword,
-      },
-      {
-        path: "resetpassword/reset",
-        name: 'ResetPassword',
-        component: ResetPassword,
-      },
-      /* Sección de Pagos */
-      {
-        path: 'Administracion/Pagos',
-        name: 'Historial de Pagos',
-        component: HistorialPagos,
-        //beforeEnter: notAuth,
-        meta: {
-          requirePermission: ["OIRAM23", 1]
-        }
-      },
-      /* Sección de Dominio */
-      {
-        path: 'Administracion/Dominios',
-        name: 'Historial Dominio',
-        component: HistorialDominio,
-        meta: {
-          requirePermission: ["OIRAM23", 1]
-        },
-      },
-      {
-        path: "usuario/perfil",
-        name: 'PerfilUsuario',
-        component: PerfilUsuario,
-        meta: {
-          requiresAuth: true
-        }
-      },
-      {
-        path: "usuario/misdominios",
-        name: 'DominiosUsuario',
-        component: DominiosUsuario,
-        meta: {
-          requiresAuth: true
-        }
-      },
-      {
-        path: '/:catchAll(.*)',
-        name: 'notFound',
-        meta: { bodyClass: 'page-error' },
-      },
-    ]
+  {
+    path: '/',
+    name: 'Inicio',
+    component: PaginaPrincipal
   },
-  // para guess el idioma de la maquina desde el correo
+  {
+    path: '/precios',
+    name: 'TablaPrecios',
+    component: TablaPrecios
+  },
+  {
+    path: '/FAQ',
+    name: 'PreguntasFrecuentes',
+    component: PreguntasFrecuentes
+  },
+  {
+    path: '/noticias',
+    name: 'Noticias',
+    component: Noticias
+  },
+  {
+    path: '/carrito',
+    name: 'CompraDominio',
+    component: CompraDominio,
+  },
+  {
+    path: '/noticia/:id',
+    name: 'PantallaNoticia',
+    component: PantallaNoticia,
+  },
+  {
+    path: "/login",
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: "/login/Registro",
+    name: 'Registro',
+    component: Registro,
+  },
+
+  {
+    path: "/recoverpassword/request",
+    name: 'SendResetPassword',
+    component: SendResetPassword,
+  },
   {
     path: "/resetpassword/reset",
-    redirect: (to) => {
-      const guessedLocale = Tr.guessDefaultLocale();
-      return `/${guessedLocale}/resetpassword/reset`;
-    },  
+    name: 'ResetPassword',
+    component: ResetPassword,
   },
- 
+  /* Sección de Pagos */
+  {
+    path: '/Administracion/Pagos',
+    name: 'Historial de Pagos',
+    component: HistorialPagos,
+    //beforeEnter: notAuth,
+    meta: {
+      requirePermission: ["OIRAM23", 1]
+    }
+  },
+  /* Sección de Dominio */
+  {
+    path: '/Administracion/Dominios',
+    name: 'Historial Dominio',
+    component: HistorialDominio,
+    meta: {
+      requirePermission: ["OIRAM23", 1]
+    },
+  },
+  {
+    path: "/usuario/perfil",
+    name: 'PerfilUsuario',
+    component: PerfilUsuario,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/usuario/misdominios",
+    name: 'DominiosUsuario',
+    component: DominiosUsuario,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'notFound',
+    meta: { bodyClass: 'page-error' },
+  },
+
   /*
     {
       path: '/',
@@ -258,7 +234,7 @@ router.beforeEach((to, from, next) => {
 })
 
 function notAuth(to, from, next) {
-  document.title = `${to.name} - Westec  PA`
+  document.title = `${to.name} - Westec-PA`
   const authStore = useUserStore();
 
   if (authStore.isAuth) {

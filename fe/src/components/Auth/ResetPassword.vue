@@ -31,12 +31,11 @@ import { useUserStore } from '../../stores/user';
 import * as mensajes from '../../helpers/mensajes';
 import useValidate from '@vuelidate/core'
 import { required, helpers, requiredUnless, minLength, sameAs } from '@vuelidate/validators'
-import Tr from "@/i18n/translation"
 
 export default {
     setup() {
         const userStore = useUserStore();
-        return { userStore, Tr };
+        return { userStore };
     },
     data() {
         return {
@@ -80,7 +79,7 @@ export default {
                 this.userStore.reset_password(this.credenciales, this.token).then(response => {
                     mensajes.ShowMessages(response);
                     if (response.status == 200) {
-                        this.$router.push(Tr.i18nRoute({ name: 'Login' }))
+                        this.$router.push('/')
                     }
                 })
             }

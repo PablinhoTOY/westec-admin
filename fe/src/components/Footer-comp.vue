@@ -17,8 +17,8 @@
           <ul class="list-unstyled mt-0 ml-0" style="font-size: 16px; margin-right: 23px;">
             <li class="my-1"><a href="" class="nav-link nav-link-custom py-1">Nosotros</a></li>
             <li class="my-1"><a href="" class="nav-link nav-link-custom py-1 ">Nuestras políticas</a></li>
-            <li class="my-1"><a @click="this.$router.push(Tr.i18nRoute({ name: 'TablaPrecios' }))" class="nav-link nav-link-custom py-1">Tabla de precios</a></li>
-            <li class="my-1"><a @click="this.$router.push(Tr.i18nRoute({ name: 'PreguntasFrecuentes' }))" class="nav-link nav-link-custom py-1">Preguntas frecuentes</a></li>
+            <li class="my-1"><a @click="this.$router.push()" class="nav-link nav-link-custom py-1">Tabla de precios</a></li>
+            <li class="my-1"><a @click="this.$router.push()" class="nav-link nav-link-custom py-1">Preguntas frecuentes</a></li>
           </ul>
         </div>
 
@@ -85,12 +85,10 @@
 </style>
 
 <script>
-import { useI18n } from 'vue-i18n'
-import Tr from "@/i18n/translation"
 export default {
     setup() {
-        const { t } = useI18n();
-        return { t, Tr }
+
+
     },
 }
 </script>

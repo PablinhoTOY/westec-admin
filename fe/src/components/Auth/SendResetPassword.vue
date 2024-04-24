@@ -3,7 +3,7 @@
 
         <v-card elevation="8" width="448" rounded="lg" border>
             <v-btn id="" class="ml-5 mt-5" variant="flat" size="72" rounded="circle"
-                :to="Tr.i18nRoute({ name: 'Login' })"><v-icon color="#5c5c5c" size="56">mdi-arrow-left-bold</v-icon></v-btn>
+                to=""><v-icon color="#5c5c5c" size="56">mdi-arrow-left-bold</v-icon></v-btn>
             <form class="px-12 pb-12 sendrequest" @submit.prevent="reset_request">
                 <div class="form-floating mt-2">
                     <h3 class="text-center bold mb-6">Recuperar Contraseña</h3>
@@ -28,13 +28,12 @@ import { useUserStore } from '../../stores/user';
 import * as mensajes from '../../helpers/mensajes';
 import { useVuelidate } from '@vuelidate/core'
 import { email, required, helpers } from '@vuelidate/validators'
-import Tr from "@/i18n/translation"
 
 export default {
     setup() {
         const userStore = useUserStore();
 
-        return { userStore, Tr };
+        return { userStore };
     },
     data() {
         return {
@@ -60,7 +59,7 @@ export default {
                 this.userStore.reset_request(this.credenciales).then(response => {
                     mensajes.ShowMessages(response);
                     if (response.status == 200) {
-                        this.$router.push(Tr.i18nRoute({ name: 'Login' }))
+                        this.$router.push('/auth/reset-password')
                     }
                 })
             }

@@ -35,13 +35,13 @@
 
                 <div class="d-flex align-center justify-content-center">
                     <v-btn class="text-caption text-blue mb-1" variant="text"
-                        @click="$router.push(Tr.i18nRoute({ name: 'SendResetPassword' }))">
+                        @click="">
                         Olvidaste tu contraseña?</v-btn>
                 </div>
 
                 <div class="d-flex justify-content-center">
                     <v-btn class="text-center text-blue text-decoration-none"
-                        @click="$router.push(Tr.i18nRoute({ name: 'Registro' }))" variant="text">
+                        @click="" variant="text">
                         Registrate ahora<v-icon icon="mdi-chevron-right" link></v-icon>
                     </v-btn>
                 </div>
@@ -71,7 +71,6 @@
 import { useUserStore } from '../../stores/user';
 import useValidate from '@vuelidate/core'
 import { email, required, helpers } from '@vuelidate/validators'
-import Tr from "@/i18n/translation"
 import * as mensajes from "../../helpers/mensajes";
 
 export default {
@@ -79,7 +78,7 @@ export default {
         // Obtenemos la instancia de useUserStore
         const userStore = useUserStore();
         // Retornamos Tr y userStore para que estén disponibles en el componente
-        return { Tr, userStore }
+        return { userStore }
     },
     data() {
         return {
@@ -137,7 +136,7 @@ export default {
                             // Si la respuesta es exitosa
                             if (res.status == 200) {
                                 // Redirigimos al usuario a la página de inicio
-                                this.$router.push(Tr.i18nRoute({ name: 'Inicio' }))
+                                this.$router.push('/')
                                 // Mostramos un mensaje de éxito
                                 mensajes.showMessagesLong('Logueado exitosamente', 'success')
                             }

@@ -340,7 +340,7 @@
                                         <v-card width="100%">
                                             <v-btn class="mt-5" id="loginId" :color="colorWestec" rounded="lg"
                                                 variant="elevated" elevation="8" height="50px" block
-                                                append-icon="mdi-send" :to="Tr.i18nRoute({ name: 'Login' })">
+                                                append-icon="mdi-send" to="">
                                                 mandar peticion
                                             </v-btn>
                                         </v-card>
@@ -379,7 +379,7 @@
                                 <v-icon :color="colorWestec" size="85px">mdi-account-key</v-icon>
                                 <v-btn class="" id="loginId" :color="colorWestec" variant="elevated" elevation="8"
                                     height="50px" width="150px" text="Login" prepend-icon="mdi-login-variant"
-                                    :to="Tr.i18nRoute({ name: 'Login' }) ">
+                                    to="">
 
                                 </v-btn>
                             </div>
@@ -483,9 +483,7 @@ este componente Vue*/
 
 import * as dominiosService from '../../services/dominios.js'
 import * as facturacionService from '../../services/facturacion.js'
-import { useI18n } from 'vue-i18n'
 import { watchEffect } from 'vue'
-import Tr from "@/i18n/translation"
 import * as msg from '../../helpers/mensajes'
 import useValidate from '@vuelidate/core'
 import { required, helpers, minLength, numeric } from '@vuelidate/validators'
@@ -499,10 +497,8 @@ import Swal from 'sweetalert2'
 
 export default {
     setup() {
-        const { t } = useI18n();
         const carritoStore = useCarritoStore();
-        const userStore = useUserStore();
-        return { t, carritoStore, userStore, Tr }
+        return { carritoStore, userStore }
     },
     directives: {
         mask
@@ -976,7 +972,7 @@ export default {
                         // this.carritoStore.limpiarCarrito()
                         // this.step = 1;
                         // await this.setDataDominios()
-                        // this.$router.push(Tr.i18nRoute({ name: 'Inicio' }))
+                        // this.$router.push()
                     }
                     else {
                         msg.ShowMessages(response)
